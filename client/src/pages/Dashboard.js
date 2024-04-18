@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import '../pages/dashboard.css'
 
 function Dashboard() {
   const [todos, setTodos] = useState([]);
@@ -52,7 +53,7 @@ function Dashboard() {
   return (
     <div className="homepage">
       <div className="todo-list">
-        <h2>Todo List</h2>
+        <h2>Add new Todo</h2>
         <input
           type="text"
           value={newTodo}
@@ -60,6 +61,8 @@ function Dashboard() {
           placeholder="Add a new todo"
         />
         <button onClick={addTodo}>Add</button>
+        <h2>Your Todo List</h2>
+
         <ul>
           {todos.map((todo) => (
             <li key={todo._id}>
